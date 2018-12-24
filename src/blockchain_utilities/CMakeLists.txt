@@ -39,7 +39,7 @@ set(blockchain_import_private_headers
   bootstrap_serialization.h
   )
 
-loki_private_headers(blockchain_import
+koson_private_headers(blockchain_import
 	  ${blockchain_import_private_headers})
 
 set(blockchain_export_sources
@@ -54,7 +54,7 @@ set(blockchain_export_private_headers
   bootstrap_serialization.h
   )
 
-loki_private_headers(blockchain_export
+koson_private_headers(blockchain_export
 	  ${blockchain_export_private_headers})
 
 
@@ -68,7 +68,7 @@ set(blockchain_blackball_private_headers
   bootstrap_serialization.h
   )
 
-loki_private_headers(blockchain_blackball
+koson_private_headers(blockchain_blackball
 	  ${blockchain_blackball_private_headers})
 
 set(blockchain_usage_sources
@@ -77,7 +77,7 @@ set(blockchain_usage_sources
 
 set(blockchain_usage_private_headers)
 
-loki_private_headers(blockchain_usage
+koson_private_headers(blockchain_usage
 	  ${blockchain_usage_private_headers})
 
 
@@ -88,7 +88,7 @@ set(blockchain_ancestry_sources
 
 set(blockchain_ancestry_private_headers)
 
-loki_private_headers(blockchain_ancestry
+koson_private_headers(blockchain_ancestry
 	  ${blockchain_ancestry_private_headers})
 
 
@@ -99,7 +99,7 @@ set(blockchain_depth_sources
 
 set(blockchain_depth_private_headers)
 
-loki_private_headers(blockchain_depth
+koson_private_headers(blockchain_depth
 	  ${blockchain_depth_private_headers})
 
 set(blockchain_stats_sources
@@ -108,11 +108,11 @@ set(blockchain_stats_sources
 
 set(blockchain_stats_private_headers)
 
-loki_private_headers(blockchain_stats
+koson_private_headers(blockchain_stats
 	  ${blockchain_stats_private_headers})
 
 
-loki_add_executable(blockchain_import
+koson_add_executable(blockchain_import
   ${blockchain_import_sources}
   ${blockchain_import_private_headers})
 
@@ -136,10 +136,10 @@ endif()
 
 set_property(TARGET blockchain_import
 	PROPERTY
-	OUTPUT_NAME "loki-blockchain-import")
+	OUTPUT_NAME "koson-blockchain-import")
 install(TARGETS blockchain_import DESTINATION bin)
 
-loki_add_executable(blockchain_export
+koson_add_executable(blockchain_export
   ${blockchain_export_sources}
   ${blockchain_export_private_headers})
 
@@ -157,10 +157,10 @@ target_link_libraries(blockchain_export
 
 set_property(TARGET blockchain_export
 	PROPERTY
-	OUTPUT_NAME "loki-blockchain-export")
+	OUTPUT_NAME "koson-blockchain-export")
 install(TARGETS blockchain_export DESTINATION bin)
 
-loki_add_executable(blockchain_blackball
+koson_add_executable(blockchain_blackball
   ${blockchain_blackball_sources}
   ${blockchain_blackball_private_headers})
 
@@ -179,11 +179,11 @@ target_link_libraries(blockchain_blackball
 
 set_property(TARGET blockchain_blackball
 	PROPERTY
-	OUTPUT_NAME "loki-blockchain-mark-spent-outputs")
+	OUTPUT_NAME "koson-blockchain-mark-spent-outputs")
 install(TARGETS blockchain_blackball DESTINATION bin)
 
 
-loki_add_executable(blockchain_usage
+koson_add_executable(blockchain_usage
   ${blockchain_usage_sources}
   ${blockchain_usage_private_headers})
 
@@ -201,10 +201,10 @@ target_link_libraries(blockchain_usage
 
 set_property(TARGET blockchain_usage
 	PROPERTY
-	OUTPUT_NAME "loki-blockchain-usage")
+	OUTPUT_NAME "koson-blockchain-usage")
 install(TARGETS blockchain_usage DESTINATION bin)
 
-loki_add_executable(blockchain_ancestry
+koson_add_executable(blockchain_ancestry
   ${blockchain_ancestry_sources}
   ${blockchain_ancestry_private_headers})
 
@@ -222,10 +222,10 @@ target_link_libraries(blockchain_ancestry
 
 set_property(TARGET blockchain_ancestry
 	PROPERTY
-	OUTPUT_NAME "loki-blockchain-ancestry")
+	OUTPUT_NAME "koson-blockchain-ancestry")
 install(TARGETS blockchain_ancestry DESTINATION bin)
 
-loki_add_executable(blockchain_depth
+koson_add_executable(blockchain_depth
   ${blockchain_depth_sources}
   ${blockchain_depth_private_headers})
 
@@ -243,10 +243,10 @@ target_link_libraries(blockchain_depth
 
 set_property(TARGET blockchain_depth
 	PROPERTY
-	OUTPUT_NAME "loki-blockchain-depth")
+	OUTPUT_NAME "koson-blockchain-depth")
 install(TARGETS blockchain_depth DESTINATION bin)
 
-loki_add_executable(blockchain_stats
+koson_add_executable(blockchain_stats
   ${blockchain_stats_sources}
   ${blockchain_stats_private_headers})
 
@@ -264,5 +264,5 @@ target_link_libraries(blockchain_stats
 
 set_property(TARGET blockchain_stats
 	PROPERTY
-	OUTPUT_NAME "loki-blockchain-stats")
+	OUTPUT_NAME "koson-blockchain-stats")
 install(TARGETS blockchain_stats DESTINATION bin)
