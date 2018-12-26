@@ -222,7 +222,7 @@ private:
 
 	inline bool check_override()
 	{
-		const char *env = getenv("SARONITE_USE_SOFTWARE_AES");
+		const char *env = getenv("KOSON_USE_SOFTWARE_AES");
 		if (!env) {
 			return false;
 		}

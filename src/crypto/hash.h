@@ -78,6 +78,8 @@ namespace crypto {
     static thread_local cn_pow_hash_v1 ctx1 = cn_pow_hash_v1::make_borrowed_v1(ctx3);
     if (variant == 0) {
       ctx1.hash(data, length, hash.data);
+    } else if (variant == 1){
+      ctx2.hash(data, length, hash.data);
     }
 	else
 	{
@@ -91,6 +93,8 @@ namespace crypto {
     static thread_local cn_pow_hash_v1 ctx1 = cn_pow_hash_v1::make_borrowed_v1(ctx3);
     if (variant == 0) {
       ctx1.hash(data, length, hash.data, true);
+    } else if (variant == 1){
+      ctx2.hash(data, length, hash.data, true);
     }
 	else
 	{

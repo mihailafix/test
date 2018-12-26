@@ -78,7 +78,7 @@ static_assert(STAKING_PORTIONS % 3 == 0, "Use a multiple of three, so that it di
 #define EMISSION_SUPPLY_MULTIPLIER                      19
 #define EMISSION_SUPPLY_DIVISOR                         10
 #define EMISSION_DIVISOR                                2000000
-#define OLD_KOSON_EMISSION								22222222222
+#define KOSON_OLD_PREMINE								((uint64_t)26838695000000000) // Emmissions of old Koson network
 
 #define CRYPTONOTE_REWARD_BLOCKS_WINDOW                 100
 #define CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2    60000 //size of block (bytes) after which reward for block calculated using block size
@@ -188,13 +188,13 @@ namespace config
   boost::uuids::uuid const NETWORK_ID = { {
         0x46 ,0x11, 0x27, 0x26 ,0x16, 0x57, 0x47, 0x96, 0xf2, 0x4c, 0x16, 0x57, 0x6a, 0x65, 0x79
     } }; // Bender's nightmare
-  std::string const GENESIS_TX = "021e01ff000380808d93f5d771027c4fd4553bc9886f1f49e3f76d945bf71e8632a94e6c177b19cbc780e7e6bdb48080b4ccd4dfc60302c8b9f6461f58ef3f2107e577c7425d06af584a1c7482bf19060e84059c98b4c3808088fccdbcc32302732b53b0b0db706fcc3087074fb4b786da5ab72b2065699f9453448b0db27f892101ed71f2ce3fc70d7b2036f8a4e4b3fb75c66c12184b55a908e7d1a1d6995566cf00";
+  std::string const GENESIS_TX = "011e01ff0001dcbda1dfbf02029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210138a572da5c10fb64193db1aea1316803e0e8ad1d4a07db35c2222224d821e11c";
   uint32_t const GENESIS_NONCE = 1022201;
 
   uint64_t const GOVERNANCE_REWARD_INTERVAL_IN_BLOCKS = ((60 * 60 * 24) / DIFFICULTY_TARGET_V2);
   std::string const GOVERNANCE_WALLET_ADDRESS[] =
   {
-    "LCFxT37LAogDn1jLQKf4y7aAqfi21DjovX9qyijaLYQSdrxY1U5VGcnMJMjWrD9RhjeK5Lym67wZ73uh9AujXLQ1RKmXEyL", // hardfork v7-10
+    "cksn4udaJVUMC6ao8hUGTdXSZSd2wHpeTDhAvNpTYJF97ACGJpZ5vzv8HXHg5HwA3oLPqCpmb5hTpR5qDVJD6yFb7qcBZiP4gG",
   };
 
   namespace testnet
@@ -208,13 +208,13 @@ namespace config
     boost::uuids::uuid const NETWORK_ID = { {
         0x5f, 0x3a, 0x78, 0x65, 0xe1, 0x6f, 0x11, 0xb8, 0x22, 0xa4, 0xdc, 0x17, 0x61, 0x64, 0x15, 0xbe,
       } }; // Bender's daydream
-    std::string const GENESIS_TX = "03011e001e01ff00018080c9db97f4fb270259b546996f69aa71abe4238995f41d780ab1abebcac9f00e808f147bdb9e3228420112573af8c309b69a1a646f41b5212ba7d9c4590bf86e04f36c486467cfef9d3d72000000000000000000000000000000000000000000000000000000000000000000";
+    std::string const GENESIS_TX = "011e01ff0001dcbda1dfbf02029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101fad8de5c901d9bd16b4a4277ed1e8e5864a1937b3766b722937eaad350bdda7f";
     uint32_t const GENESIS_NONCE = 10001;
 
     uint64_t const GOVERNANCE_REWARD_INTERVAL_IN_BLOCKS = 1000;
     std::string const GOVERNANCE_WALLET_ADDRESS[] =
     {
-      "T6SUprTYE5rQpep9iQFxyPcKVd91DFR1fQ1Qsyqp5eYLiFc8XuYd3reRE71qDL8c3DXioUbDEpDFdaUpetnL37NS1R3rzoKxi", 
+      "Xrb8u39EMFUKVy3a3DbUFF18AjGixBf6PExBjyw9qsZr9pyjYTEQBayNBE6CS5X2A7CTXLg18iJzq6cJW2HudmKz1JugiKSXh", 
     };
 
   }
@@ -230,13 +230,13 @@ namespace config
     boost::uuids::uuid const NETWORK_ID = { {
         0xbb ,0x37, 0x9B, 0x22 , 0x02, 0x16 , 0x61, 0x1E, 0x09, 0x11, 0x97, 0x8A, 0xCC, 0xA1, 0xDF, 0x9C
       } }; // Beep Boop
-    std::string const GENESIS_TX = "021e01ff000380808d93f5d771027e4490431900c66a6532917ad9e6a1de634a209b708f653097e7b48efc1238c68080b4ccd4dfc60302ba19a224e6474371f9161b2e6271a36d060cbdc2e479ad78f1be64c56576fa07808088fccdbcc32302bccf9c13ba1b5bb02638de6e557acdd46bf48953e42cf98a12d2ad2900cc316121018fc6728d9e3c062d3afae3b2317998d2abee1e12f51271ba1c0d3cdd236b81d200";
+    std::string const GENESIS_TX = "011e01ff0001dcbda1dfbf02029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b4daec6188dfb3a2963be11ab1634bc555ea520ee2e2c07018b343fb4e0a07f3";
     uint32_t const GENESIS_NONCE = 10002;
 
     uint64_t const GOVERNANCE_REWARD_INTERVAL_IN_BLOCKS = ((60 * 60 * 24 * 7) / DIFFICULTY_TARGET_V2);
     std::string const GOVERNANCE_WALLET_ADDRESS[] =
     {
-      "59f7FCwYMiwMnFr8HwsnfJ2hK3DYB1tryhjsfmXqEBJojKyqKeNWoaDaZaauoZPiZHUYp2wJuy5s9H96qy4q9xUVCXXHmTU",
+      "jVAjWH1eEoP863swvvFungAbbYNZMPNbwBk7jFUGfhKtBo6rh8wYVdNQ66uJARtZruSyTtb9QK2LYaLW2Gga3Yif2bZtJcno3",
     };
   }
 }
